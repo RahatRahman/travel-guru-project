@@ -1,0 +1,12 @@
+.header-navbar {
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header-navbar img {
+  height: 60px;
+}
+#basic-navbar-nav {
+  color: white;
+}

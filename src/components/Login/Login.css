@@ -1,0 +1,24 @@
+.login {
+  background-color: white;
+  margin: 10px 30% 0 30%;
+  padding: 20px 50px 20px 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px white;
+}
+.login-form {
+  color: black;
+  text-align: center;
+}
+.login-bottom {
+  border-top: 1px solid lightgray;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+.login-bottom img {
+  height: 30px;
+  float: left;
+}
+.login-bottom Button {
+  border: 1px solid black;
+  border-radius: 30px;
+}

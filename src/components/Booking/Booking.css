@@ -1,0 +1,13 @@
+.booking {
+  margin-top: 25px;
+
+  padding-left: 150px;
+  padding-right: 150px;
+}
+.start-booking {
+  background-color: white;
+  /* margin: 10px 30% 0 30%; */
+  padding: 20px 40px 20px 40px;
+  /* border-radius: 10px;
+  box-shadow: 5px 5px 10px white; */
+}
