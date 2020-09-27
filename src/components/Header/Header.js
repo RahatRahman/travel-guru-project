@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
 import logo from "../../Image/Logo.png";
 import "./Header.css";
 
 const Header = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
   return (
     <div className="header">
       <Navbar expand="lg" className="header-navbar">
@@ -17,20 +20,22 @@ const Header = () => {
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             </Form>
-            <Nav.Link href="/" className="mr-4 text-white">
-              News
-            </Nav.Link>
-            <Nav.Link href="/" className="mr-4 text-white">
-              Destination
-            </Nav.Link>
-            <Nav.Link href="/" className="mr-4 text-white">
-              Blog
-            </Nav.Link>
-            <Nav.Link href="/" className="mr-4 text-white">
-              Contact
-            </Nav.Link>
+            <Nav.Link className="mr-2 text-white">News</Nav.Link>
+            <Nav.Link className="mr-2 text-white">Destination</Nav.Link>
+            <Nav.Link className="mr-2 text-white">Blog</Nav.Link>
+            <Nav.Link className="mr-2 text-white">Contact</Nav.Link>
+            {loggedInUser.isSignedIn && (
+              <Nav.Link className="text-warning">{loggedInUser.name || loggedInUser.email}</Nav.Link>
+            )}
+
             <Link to="/login">
-              <Button variant="warning">Login</Button>
+              {loggedInUser.isSignedIn ? (
+                <Button variant="warning" onClick={() => setLoggedInUser({})}>
+                  Logout
+                </Button>
+              ) : (
+                <Button variant="warning">Login</Button>
+              )}
             </Link>
           </Nav>
         </Navbar.Collapse>

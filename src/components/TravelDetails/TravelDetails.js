@@ -5,10 +5,10 @@ import img1 from "../../Image/Sajek.png";
 import img2 from "../../Image/Sreemongol.png";
 import img3 from "../../Image/sundorbon.png";
 import { Link } from "react-router-dom";
-import placeData from "../../fakeData/placeData";
+import FakeData from "../../FakeData/FakeData";
 
 const TravelDetails = () => {
-  const [place] = useState(placeData);
+  const [place] = useState(FakeData);
   return (
     <div className="travelDetails">
       <Carousel>

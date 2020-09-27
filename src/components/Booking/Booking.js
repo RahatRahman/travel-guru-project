@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useParams } from "react-router-dom";
-import placeData from "../../fakeData/placeData";
+import { Link, useParams } from "react-router-dom";
+import FakeData from "../../FakeData/FakeData";
 import "./Booking.css";
 
 const Booking = () => {
@@ -11,7 +11,7 @@ const Booking = () => {
   const [endDate, setEndDate] = useState(new Date());
 
   const { startBooking } = useParams();
-  const [place] = useState(placeData);
+  const [place] = useState(FakeData);
   const [travelPlace, setTravelPlace] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Booking = () => {
           <Form>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label className="text-muted">Origin</Form.Label>
-              <Form.Control type="text" placeholder="Enter your address" required />
+              <Form.Control className="font-weight-bold" type="text" placeholder="Enter your address" required />
             </Form.Group>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label className="text-muted">Destination</Form.Label>
@@ -46,7 +46,7 @@ const Booking = () => {
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label className="text-muted">From</Form.Label>
                 <DatePicker
-                  className="text-dark"
+                  className="text-dark dateStyle"
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                   dateFormat="dd/MM/yyyy"
@@ -57,7 +57,7 @@ const Booking = () => {
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label className="text-muted">To</Form.Label>
                 <DatePicker
-                  className="text-dark"
+                  className="text-dark dateStyle"
                   selected={endDate}
                   onChange={(date) => setEndDate(date)}
                   dateFormat="dd/MM/yyyy"
@@ -65,10 +65,11 @@ const Booking = () => {
                 />
               </Form.Group>
             </Form.Row>
-
-            <Button variant="warning" type="submit" size="large" block>
-              Start Booking
-            </Button>
+            <Link to={`/room/${travelPlace.name}`}>
+              <Button variant="warning" type="submit" size="large" block>
+                Start Booking
+              </Button>
+            </Link>
           </Form>
         </Col>
       </Row>

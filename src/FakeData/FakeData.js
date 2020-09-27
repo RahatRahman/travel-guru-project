@@ -1,4 +1,4 @@
-var placeData = [
+var FakeData = [
   {
     id: 1,
     name: "COX'S BAZAR",
@@ -19,4 +19,4 @@ var placeData = [
   },
 ];
 
-export default placeData;
+export default FakeData;

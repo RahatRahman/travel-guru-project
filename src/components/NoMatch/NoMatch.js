@@ -3,8 +3,8 @@ import Image from "../../Image/NoMatch.jpg";
 
 const NoMatch = () => {
   const imgStyle = {
-    height: "100vh",
-    width: "100vw",
+    height: "100%",
+    width: "100%",
   };
   return (
     <div>

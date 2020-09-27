@@ -1,0 +1,24 @@
+.room {
+  background-color: white;
+  height: 100%;
+  padding-top: 25px;
+
+  padding-left: 140px;
+  padding-right: 140px;
+}
+.room-body {
+  margin-bottom: 10px;
+}
+.room-body img {
+  height: 170px;
+}
+.room-body small {
+  color: #6a6a6a;
+}
+.room-bottom {
+  padding: 50px 0 50px 50px;
+}
+.room-bottom img {
+  border-radius: 10px;
+  margin-left: 80px;
+}
